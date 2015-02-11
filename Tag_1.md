@@ -25,9 +25,7 @@ In den abgebildeten Beispielen wird eine Software entwickelt, welche Kunden verw
 Wir verwenden folgendes Projekt-Template aus Visual Studio:
 File > New > Project > Templates > Visual C# > Web > **"ASP.NET Web Application"**
 
-![Screenshot](Images/screenshot_01.png)
-
-Dabei wählen wir ein Web API Projekt aus:
+Dabei wählen wir das Web API Projekt aus:
 
 ![Screenshot](Images/screenshot_02.png)
 
@@ -43,9 +41,7 @@ sowie
 2. Scripts
 
 
-
-
-
+<div style="page-break-after: always;"></div>
 
 <a name="poco"></a>
 ## 2. Anlegen von DTOs / POCOs (Geschäftsobjekte)
@@ -81,13 +77,6 @@ public class Invoice
 
 
 ```
-
-
-
-
-
-
-
 
 <a name="ioc"></a>
 ## 3. Verwendung von IoC & Dependency Injection
@@ -128,7 +117,7 @@ public class IocConfig
 
 
 
-
+<div style="page-break-after: always;"></div>
 
 
 <a name="ef"></a>
