@@ -1,11 +1,13 @@
-# Vorläufige Agenda
+# ASP.NET MVC Workshop
+<img src="Images/grossweber.png" align="right">
 
 Ihr Trainer: [Johannes Hoppe](http://www.haushoppe-its.de) von [GROSSWEBER](http://grossweber.com/)
 
 
+
 # Priorisierte Themenwünsche
 
-Folgende Themen haben Sie mit einer hohen Priorität bewertet. In der nachfolgende Agenda sind die Themen entsprechend berücksichtigt worden. Laut Vorabgespräch sollen aufgrund konkreter Projektanforderungen vor allem serverseitige Technologien im Fokus stehen. Wir empfehlen zusätzlich die Besprechung von Client-seitigen Technologien. Es bietet sich ein Anschluss-Workshop zum Themen-Komplex JavaScript an!  
+Folgende Themen haben Sie mit einer hohen Priorität bewertet. In der nachfolgende Agenda sind die Themen entsprechend berücksichtigt worden. Laut Vorabgespräch sollen aufgrund konkreter Projektanforderungen vor allem serverseitige Technologien im Fokus stehen. Wir empfehlen zusätzlich die Besprechung von Client-seitigen Technologien. Es bietet sich ein Anschluss-Workshop zum Themen-Komplex **JavaScript** an!  
 
 ## Grundlagen
 - Das Model-View-Controller-Prinzip
@@ -40,17 +42,18 @@ Folgende Themen haben Sie mit einer hohen Priorität bewertet. In der nachfolgen
 
 
 # Tag 1 - ASP.NET MVC / Web API & C# Unit Testing
-1. Themenwahl für Prototyp
+1. Themenwahl für Prototyp, Anlegen Projekt
 2. Anlegen von DTOs / POCOs (Geschäftsobjekte)
 3. Verwendung von IoC & Dependency Injection
 4. Einrichten vom Entity Framework, Code First
-    1. Besprechung: Mockbarer Context (DbContext)
-5. Refactoring: Repository (CRUD) – Tests (State Driven Tests)
-6. Erstellen eines MVC Controllers (mit View)
-7. Erstellen eines MVC Controllers Web API Controller
+    1. Besprechung: Mockbarer Context (DbContext) - 3 Ansätze!
+5. Refactoring: Verwendung des Repository-Patterns
+6. Erstellen eines MVC Controllers
+7. Erstellen eines Web API Controllers
 8. Best Practices (z.B. T4MVC)
 
 Eingesetzte Technologien:
+- Nuget
 - ASP.NET MVC
 - ASP.NET Web API
 - Entity Framework 6
@@ -58,16 +61,19 @@ Eingesetzte Technologien:
 - MSpec & Moq & Fluent Assertions
 
 
-
-
 ## Tag 2 - ASP.NET MVC
-1. ASP.NET MVC Routing Bundling, ggf. mit Transformation
+1. ASP.NET MVC Routing Bundling
 2. Render Section
 3. ActionFilter
-4. OData (IQueryable)
-5. Daten anzeigen per Grid und Chart
+4. ActionResult
+4. Kurz angerissen: OData (IQueryable)
+5. OData-Daten anzeigen per Grid und Chart
 
-    Technologien: ASP.NET MVC, OData, ggf. Kendo UI 
+Zusätzlich eingesetzte Technologien:
+- Nuget
+- ASP.NET MVC
+- ASP.NET Web API / OData
+- ggf. Kendo UI (für Grid)
 
 ## Vorschlag: Tag 3 - JavaScript Grundlagen
 
