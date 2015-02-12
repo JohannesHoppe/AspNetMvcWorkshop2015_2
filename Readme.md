@@ -68,8 +68,8 @@ Eingesetzte Technologien:
     * Sections
     * Partial Views 
 3. Formulare mit ASP.NET MVC
-3. ActionFilter
-4. Kurz angerissen: OData (IQueryable)
+4. ActionFilter
+5. Kurz angerissen: OData (IQueryable)
     * OData-Daten anzeigen per Grid und Chart
 6. Best Practices (z.B. T4MVC)
 
