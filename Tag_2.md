@@ -282,7 +282,33 @@ Der Controller unterstützt nun eine seitenweise Ausgabe, Sortierung und Filteru
 
 http://demos.telerik.com/kendo-ui/grid/index
 
-Hinweis, bei einem OData v3 Endpunkt muss die Datasource wie folgt angepasst werden:
+
+### Integration in die Anwendung
+
+1. Nuget Paket: "Kendo UI Professional"
+2. Anpassung BundleConfig
+3. Einbinden (z.B. in @section scripts )
+
+```
+public static void RegisterBundles(BundleCollection bundles)
+{
+    bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
+                "~/Scripts/jquery-{version}.js",
+                "~/Scripts/kendo/2014.2.716/kendo.all.min.js"));
+
+    /* [...] */
+
+    bundles.Add(new StyleBundle("~/Content/css").Include(
+              "~/Content/bootstrap.css",
+              "~/Content/site.css",      
+              "~/Content/kendo/2014.2.716/kendo.common-bootstrap.min.css",
+              "~/Content/kendo/2014.2.716/kendo.bootstrap.min.css"));
+}
+
+```
+
+**Hinweis**: Die verwendete Kendo UI Version geht von OData v2 aus.
+Bei einem OData v3 Endpunkt muss die Datasource wie folgt angepasst werden. (data und total wurden korrigiert):
 
 ```js
 var dataSource = new kendo.data.DataSource({
