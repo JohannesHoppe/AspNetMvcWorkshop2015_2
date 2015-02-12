@@ -367,7 +367,7 @@ Nach Ende des Tages sollten Sie folgende Aufgaben eigenständig durchführen kö
 1. Erstelle Sie ein passendes Projekt per Visual Studio
 2. Implementieren Sie IoC mit Autofac
 3. Lege Sie einen Web API Controller an
-4. Laden Sie Daten per $.get und $.post
+4. Laden Sie Daten per $.get und $.post (jQuery)
 5. **Erstelle Sie das CustomerRepository** (Unter Einsatz von IoC)
 
 

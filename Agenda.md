@@ -39,7 +39,7 @@ Folgende Themen haben Sie mit einer hohen Priorität bewertet. In der nachfolgen
 
 <div style="page-break-after: always;"></div>
 
-# Vorläufige Agenda
+# Agenda
 
 
 # Tag 1 - ASP.NET MVC / Web API & C# Unit Testing
@@ -51,7 +51,6 @@ Folgende Themen haben Sie mit einer hohen Priorität bewertet. In der nachfolgen
 5. Refactoring: Verwendung des Repository-Patterns
 6. Erstellen eines MVC Controllers
 7. Erstellen eines Web API Controllers
-8. Best Practices (z.B. T4MVC)
 
 Eingesetzte Technologien:
 - Nuget
@@ -62,19 +61,24 @@ Eingesetzte Technologien:
 - MSpec & Moq & Fluent Assertions
 
 
-## Tag 2 - ASP.NET MVC
-1. ASP.NET MVC Routing Bundling
-2. Render Section
+## Tag 2 - ASP.NET MVC & Kendo UI
+1. Besprechung Ergebnisse des Vortags
+2. Grundlagen ASP.NET MVC
+    * Routing und Bundling
+    * Sections
+    * Partial Views 
+3. Formulare mit ASP.NET MVC
 3. ActionFilter
-4. ActionResult
 4. Kurz angerissen: OData (IQueryable)
-5. OData-Daten anzeigen per Grid und Chart
+    * OData-Daten anzeigen per Grid und Chart
+6. Best Practices (z.B. T4MVC)
 
-Zusätzlich eingesetzte Technologien:
+Eingesetzte Technologien:
 - Nuget
 - ASP.NET MVC
 - ASP.NET Web API / OData
-- ggf. Kendo UI (für Grid)
+- Kendo UI (für Grid und Chart)
+- T4MVC
 
 ## Vorschlag: Tag 3 - JavaScript Grundlagen
 
@@ -100,6 +104,7 @@ Technologien: AngularJS, SignalR, node.js /npm, Karma Testrunner, Jasmine
 
 * Eigener Laptop                              
 * Visual Studio 2013
+* SQL Server 2012 (Express)
 * Resharper (ggf. Trial)
 * Optional: GitExtensions https://code.google.com/p/gitextensions/ oder Github für Windows
 
