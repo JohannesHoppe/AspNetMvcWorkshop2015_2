@@ -4,7 +4,7 @@ using System.Web.Http;
 using System.Web.Http.Description;
 using CustomerManager.Models;
 
-namespace AcTraining.Controllers
+namespace CustomerManager.Controllers
 {
     //public class CustomersController : ODataController
     public class CustomersController : ApiController

@@ -233,7 +233,7 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\CustomerRepository.cs" />
-    <Compile Include="Models\CustomersController.cs" />
+    <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Models\DataContext.cs" />
     <Compile Include="Models\ICustomerRepository.cs" />
     <Compile Include="Models\IdentityModels.cs" />
