@@ -2,7 +2,7 @@
 
 namespace CustomerManager.Models
 {
-    public class CustomerRepository
+    public class CustomerRepository : ICustomerRepository
     {
         private readonly DataContext _dataContext;
 

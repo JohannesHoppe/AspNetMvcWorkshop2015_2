@@ -1,36 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
-using System.Data.Entity.Infrastructure;
-using System.Linq;
+﻿using System.Linq;
 using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
+using CustomerManager.Models;
 
-namespace CustomerManager.Models
+namespace AcTraining.Controllers
 {
+    //public class CustomersController : ODataController
     public class CustomersController : ApiController
     {
-        private DataContext db;
+        private readonly ICustomerRepository _customerRep;
 
-        public CustomersController(DataContext db)
+        public CustomersController(ICustomerRepository customerRep)
         {
-            this.db = db;
+            _customerRep = customerRep;
         }
 
-        // GET: api/Customers
+        //[EnableQuery]
         public IQueryable<Customer> GetCustomers()
         {
-            return db.Customers;
+            return _customerRep.GetCustomers();
         }
 
         // GET: api/Customers/5
         [ResponseType(typeof(Customer))]
         public IHttpActionResult GetCustomer(int id)
         {
-            Customer customer = db.Customers.Find(id);
+            Customer customer = _customerRep.GetCustomer(id);
             if (customer == null)
             {
                 return NotFound();
@@ -41,76 +37,37 @@ namespace CustomerManager.Models
 
         // PUT: api/Customers/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutCustomer(int id, Customer customer)
+        public IHttpActionResult PutCustomer(Customer customer)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != customer.Id)
+            if (customer.Id == 0)
             {
                 return BadRequest();
             }
 
-            // so macht mans richtig!
-            var customerInDb = db.Customers.Find(id);
-            customerInDb.FirstName = customer.FirstName;
-            customerInDb.LastName = customer.LastName;
-            db.SaveChanges();
+            _customerRep.UpdateCustomer(customer);
 
-            /*
-            db.Entry(customer).State = EntityState.Modified;
-
-            try
-            {
-                db.SaveChanges();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!CustomerExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-             * */
-
-            return StatusCode(HttpStatusCode.NoContent);
+            return StatusCode(HttpStatusCode.OK);
         }
 
         // POST: api/Customers
         [ResponseType(typeof(Customer))]
         public IHttpActionResult PostCustomer(Customer customer)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            db.Customers.Add(customer);
-            db.SaveChanges();
-
-            return CreatedAtRoute("DefaultApi", new { id = customer.Id }, customer);
+            _customerRep.CreateCustomer(customer);
+            return StatusCode(HttpStatusCode.OK);
         }
 
         // DELETE: api/Customers/5
         [ResponseType(typeof(Customer))]
         public IHttpActionResult DeleteCustomer(int id)
         {
-            Customer customer = db.Customers.Find(id);
-            if (customer == null)
-            {
-                return NotFound();
-            }
-
-            db.Customers.Remove(customer);
-            db.SaveChanges();
-
-            return Ok(customer);
+            _customerRep.DeleteCustomer(id);
+            return StatusCode(HttpStatusCode.OK);
         }
     }
 }

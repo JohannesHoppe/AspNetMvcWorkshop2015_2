@@ -1,16 +1,14 @@
-﻿using System.Web.Http;
-using System.Web.Http.Results;
-using CustomerManager.Models;
+﻿using CustomerManager.Models;
 using FluentAssertions;
 using Machine.Specifications;
 
 namespace CustomerManagerTests
 {
-    [Subject(typeof (CustomersController))]
+    [Subject(typeof (CustomerRepository))]
     public class When_getting_one_single_customer
     {
-        static CustomersController controller;
-        static IHttpActionResult result;
+        static CustomerRepository controller;
+        static Customer result;
 
         Establish context = () =>  {
 
@@ -21,13 +19,12 @@ namespace CustomerManagerTests
             });
             context.SaveChanges();
 
-            controller = new CustomersController(context);
+            controller = new CustomerRepository(context);
         };
 
         Because of = () => result = controller.GetCustomer(1);
 
-        It should_return_the_correct_customer = () => 
-            ((OkNegotiatedContentResult<Customer>)result).Content.Id.Should().Be(1);
+        It should_return_the_correct_customer = () => result.Id.Should().Be(1);
 
     }
 }

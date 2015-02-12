@@ -86,10 +86,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="When_requesting_an_existing_customer.cs" />
+    <Compile Include="When_getting_a_list_of_customers.cs" />
     <Compile Include="When_getting_one_single_customer.cs" />
-    <Compile Include="When_calling_customers_controller.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
