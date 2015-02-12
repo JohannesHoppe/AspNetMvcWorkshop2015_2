@@ -36,17 +36,14 @@ public class When_doing_a_simple_test
     static int value2;
     static int result;
 
-    private Establish context = () =>
-                                {
-                                    value1 = 1;
-                                    value2 = 2;
-                                };
+    private Establish context = () => { value1 = 1; value2 = 2; };
 
     Because of = () => result = value1 + value2;
 
     It should_have_the_expected_result = () => result.Should().Be(3);
 }
 ```
+
 
 
 
@@ -101,13 +98,48 @@ Partielle Views sind Views, welche in andere Views eingebunden werden.
 
 
 
+<div style="page-break-after: always;"></div>
 
 
 <a name="formulare"></a>
 ## 3. Formulare mit ASP.NET MVC
 
-TODO
+Das Tooling von Visual Studio unterstüzt sehr gut die Standard-Aufgaben bei zum Erzeugen, Anzeigen, Bearbeiten und Löschen (CRUD) von einzelnen Entiäten.
 
+Ändern Sie zunächst die Klasse `Customers` wie folgt ab:
+
+```
+public class Customer
+{
+    [Display(Name = "Kundennummer")]
+    public int Id { get; set; }
+
+    [Display(Name = "Vorname")]
+    [Required(ErrorMessage = "Vorname muss angegeben werden")]
+    [StringLength(200)]
+    public string FirstName { get; set; }
+
+    [Display(Name = "Nachname")]
+    [Required(ErrorMessage = "Nachname muss angegeben werden")]
+    [StringLength(200)]
+    public string LastName { get; set; }
+
+    [Display(Name = "E-Mail Adresse")]
+    public string Mail { get; set; } 
+}
+``` 
+
+Anschließend können Sie alle vier Ansichten über ein Template generieren lassen:
+
+Controllers > Add > Controller... > MVC 5 Controller with Views, using EF
+
+![Screenshot](Images/screenshot_03.png)
+![Screenshot](Images/screenshot_04.png)
+
+Die generierten Views kann man direkt verwenden. Der Controller muss jedoch noch für das bestehende `CustomerRepository` angepasst werden.
+
+![Screenshot](Images/screenshot_05.png)
+![Screenshot](Images/screenshot_06.png)
 
 ### Model Binder
 
@@ -141,7 +173,7 @@ http://robhead89.blogspot.de/2014/08/trimming-strings-in-action-parameters.html
 
 
 
-
+<div style="page-break-after: always;"></div>
 
 <a name="filter"></a>
 ## 4. Action Filter (MVC)
@@ -226,7 +258,7 @@ namespace AcTraining.Controllers
 
 
 
-
+<div style="page-break-after: always;"></div>
 
 <a name="odata"></a>
 ## 5. OData

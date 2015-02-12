@@ -356,7 +356,7 @@ Man beachte das Attribute Routing, welches in der Web API 2 neu hinzu gekommen i
 public HttpResponseMessage GetReset()
 ```
 
-**Der Controller ist nicht nur unvollständig, sondern hat auch einen Bug! Finden Sie den Bug, verwenden Sie einen Unit-Test zu Verfifikation!
+**Der Controller ist nicht nur unvollständig, sondern hat auch einen Bug! Finden Sie den Bug, verwenden Sie einen Unit-Test zu Verifikation!
 **
 
 
