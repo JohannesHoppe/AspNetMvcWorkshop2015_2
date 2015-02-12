@@ -1,4 +1,6 @@
-﻿using System.Reflection;
+﻿using System.Data.Common;
+using System.Linq;
+using System.Reflection;
 using System.Web.Http;
 using System.Web.Mvc;
 using Autofac;
@@ -18,9 +20,15 @@ namespace CustomerManager.App_Start
 
             builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
 
-            var connection = Effort.DbConnectionFactory.CreatePersistent("Blubb");
-            var context = new DataContext(connection);
-            builder.RegisterInstance(context);
+            DbConnection connection = Effort.DbConnectionFactory.CreatePersistent("Blubb");
+            builder.RegisterInstance(connection);
+
+            // all types which are decorated with [RegisterInstancePerRequest]
+            builder.RegisterAssemblyTypes(Assembly.GetExecutingAssembly())
+                .Where(t => t.GetCustomAttributes(typeof(RegisterInstancePerRequestAttribute), false).Any())
+                .AsSelf()
+                .AsImplementedInterfaces()
+                .InstancePerRequest();
 
             var container = builder.Build();
 

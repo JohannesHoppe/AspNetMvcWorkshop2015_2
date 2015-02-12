@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Data.Common;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
+using CustomerManager.App_Start;
 
 namespace CustomerManager.Models
 {
+    [RegisterInstancePerRequest]
     public class DataContext  : DbContext
     {
         public DataContext()
