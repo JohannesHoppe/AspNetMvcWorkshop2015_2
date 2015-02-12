@@ -8,9 +8,13 @@ namespace CustomerManager.Models
 {
     public class DataContext  : DbContext
     {
+        public DataContext()
+        {
+
+        }
         public DataContext(DbConnection connection) : base(connection, true) { }
 
-        public DbSet<Customer> Customers { get; set; }
+        public virtual DbSet<Customer> Customers { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
