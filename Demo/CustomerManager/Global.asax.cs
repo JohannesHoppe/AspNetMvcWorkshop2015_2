@@ -6,6 +6,7 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using CustomerManager.App_Start;
 using CustomerManager.Models;
 
 namespace CustomerManager
@@ -21,6 +22,8 @@ namespace CustomerManager
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
             Effort.Provider.EffortProviderConfiguration.RegisterProvider();
+
+             IocConfig.Register();
         }
     }
 }
