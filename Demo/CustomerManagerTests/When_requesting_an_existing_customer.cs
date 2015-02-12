@@ -27,6 +27,7 @@ namespace CustomerManagerTests
             () => result.Should().BeOfType<OkNegotiatedContentResult<Customer>>();
     }
 
+    [Subject(typeof(CustomersController))]
     public class When_requesting_a_non_existing_customer
     {
         static CustomersController controller;

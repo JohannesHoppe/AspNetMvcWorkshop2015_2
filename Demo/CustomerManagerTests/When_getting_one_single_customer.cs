@@ -25,6 +25,5 @@ namespace CustomerManagerTests
         Because of = () => result = controller.GetCustomer(1);
 
         It should_return_the_correct_customer = () => result.Id.Should().Be(1);
-
     }
 }
