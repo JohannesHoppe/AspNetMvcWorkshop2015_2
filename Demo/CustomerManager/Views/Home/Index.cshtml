@@ -2,8 +2,11 @@
 <div class="jumbotron">
     <h1>Hello MVC</h1>
     <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
-    
+
     @Html.ActionLink("Reset Data", "Reset", "api", null, new { @class = "btn btn-warning btn-lg" })
+
+    @Html.ActionLink("Kunden Administrieren", "Index", "Customers2",
+        null, new { @class = "btn btn-default btn-lg" })
 </div>
 
 @Html.Partial("Hallo", new Customer { FirstName = "Test", LastName = "Test" })
@@ -11,7 +14,7 @@
 
 @section scripts {
     <script>
-    
+
         $(function () {
             //$("body").css("color", "red");
         })

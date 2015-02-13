@@ -224,6 +224,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\Customers2Controller.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="ControllerApi\ValuesController.cs" />
     <Compile Include="Controllers\ResetController.cs" />
@@ -300,6 +301,11 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Home\Hallo.cshtml" />
+    <Content Include="Views\Customers2\Create.cshtml" />
+    <Content Include="Views\Customers2\Delete.cshtml" />
+    <Content Include="Views\Customers2\Details.cshtml" />
+    <Content Include="Views\Customers2\Edit.cshtml" />
+    <Content Include="Views\Customers2\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
