@@ -14,6 +14,13 @@ namespace CustomerManager.Controllers
             ViewBag.Title = "Home Page";
 
             return View();
+        }        
+        
+        public ViewResult Grid()
+        {
+            return View();
         }
+
+
     }
 }

@@ -21,7 +21,5 @@ namespace CustomerManager.Models
 
         [Display(Name = "Mail")]
         public string Mail { get; set; }
-
-        public ICollection<Invoice> Invoices { get; set; }
     }
 }
