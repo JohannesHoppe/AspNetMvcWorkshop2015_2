@@ -11,7 +11,6 @@ namespace CustomerManager.Controllers
         public ViewResult Index()
         {
             ViewBag.Title = "Home Page";
-
             return View();
         }
     }

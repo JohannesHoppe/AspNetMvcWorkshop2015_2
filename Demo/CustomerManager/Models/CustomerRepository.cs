@@ -1,7 +1,9 @@
 ﻿using System.Linq;
+using CustomerManager.App_Start;
 
 namespace CustomerManager.Models
 {
+    [RegisterInstancePerRequest]
     public class CustomerRepository : ICustomerRepository
     {
         private readonly DataContext _dataContext;

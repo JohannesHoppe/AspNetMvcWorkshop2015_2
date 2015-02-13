@@ -21,7 +21,7 @@ namespace CustomerManagerTests
                 controller = new CustomersController(repository);
             };
 
-        Because of = () => result = controller.GetCustomer(99999);
+        Because of = () => result = controller.GetCustomer(-1);
 
         It should_respond_with_status_code_ok =
             () => result.Should().BeOfType<OkNegotiatedContentResult<Customer>>();
