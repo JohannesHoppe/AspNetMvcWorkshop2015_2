@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.Web;
 using System.Web.Mvc;
 
 namespace CustomerManager
@@ -29,6 +30,9 @@ namespace CustomerManager
         public void OnActionExecuted(ActionExecutedContext filterContext)
         {
             GetTimer(filterContext, "action").Stop();
+
+            filterContext.Controller.ViewBag.Title = HttpContext.Current.User.Identity.Name;
+
         }
 
         public void OnResultExecuting(ResultExecutingContext filterContext)
@@ -48,11 +52,11 @@ namespace CustomerManager
             {
                 response.Write(
                     string.Format(
-                    "<b>Action '{0} :: {1}'<br /> Execute: {2}ms, Render: {3}ms.</b>",
+                    "<b>Action '{0} :: {1}'<br /> Execute: {2}ticks, Render: {3}ticks.</b>",
                     filterContext.RouteData.Values["controller"],
                     filterContext.RouteData.Values["action"],
-                    actionTimer.ElapsedMilliseconds,
-                    renderTimer.ElapsedMilliseconds));
+                    actionTimer.ElapsedTicks,
+                    renderTimer.ElapsedTicks));
             }
         }
     }
