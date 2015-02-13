@@ -2,63 +2,66 @@
     <div id="grid"></div>
 </div>
 
-@section scripts
+<kendo-grid options="mainGridOptions">
+
+
+    @section scripts
 {
-<script>
-    $(document).ready(function () {
-        
-        var dataSource = new kendo.data.DataSource({
-            type: 'odata',
-            transport: {
-                read: {
-                    type: 'GET',
-                    url: '/odata/Customers',
-                    dataType: 'json'
-                }
-            },
-            schema: {
-                data: function (data) { return data.value; },
-                total: function (data) { return data['odata.count']; },
-                model: {
-                    id: 'Id',
-                    fields: {
-                        Id: { type: 'number' },
-                        FirstName: { type: 'string' },
-                        LastName: { type: 'string' },
-                        Mail: { type: 'string' }
-                        //DateOfBirth: { type: 'date' }
-                    }
-                }
-            },
-            serverPaging: true,
-            serverSorting: true,
-            serverFiltering: true,
-            pageSize: 10
-        });
-        
-        
-        
-        $("#grid").kendoGrid({
-            dataSource: dataSource,
-            height: 550,
-            groupable: true,
-            sortable: true,
-            pageable: true,
-            columns: [{
-                field: "Id",
-                title: "Kundennummer"
-            },{
-                field: "FirstName",
-                title: "Vorname",
-                width: 200
-            }, {
-                field: "LastName",
-                title: "Nachname"
-            }, {
-                field: "Mail",
-                title: "E-Mail Adresse"
-            }]
-        });
-    });
-</script>
-}
+        <script>
+            $(document).ready(function () {
+
+                var dataSource = new kendo.data.DataSource({
+                    type: 'odata',
+                    transport: {
+                        read: {
+                            type: 'GET',
+                            url: '/odata/Customers',
+                            dataType: 'json'
+                        }
+                    },
+                    schema: {
+                        data: function (data) { return data.value; },
+                        total: function (data) { return data['odata.count']; },
+                        model: {
+                            id: 'Id',
+                            fields: {
+                                Id: { type: 'number' },
+                                FirstName: { type: 'string' },
+                                LastName: { type: 'string' },
+                                Mail: { type: 'string' }
+                                //DateOfBirth: { type: 'date' }
+                            }
+                        }
+                    },
+                    serverPaging: true,
+                    serverSorting: true,
+                    serverFiltering: true,
+                    pageSize: 10
+                });
+
+
+
+                $("#grid").kendoGrid({
+                    dataSource: dataSource,
+                    height: 550,
+                    groupable: true,
+                    sortable: true,
+                    pageable: true,
+                    columns: [{
+                        field: "Id",
+                        title: "Kundennummer"
+                    }, {
+                        field: "FirstName",
+                        title: "Vorname",
+                        width: 200
+                    }, {
+                        field: "LastName",
+                        title: "Nachname"
+                    }, {
+                        field: "Mail",
+                        title: "E-Mail Adresse"
+                    }]
+                });
+            });
+        </script>
+    }
