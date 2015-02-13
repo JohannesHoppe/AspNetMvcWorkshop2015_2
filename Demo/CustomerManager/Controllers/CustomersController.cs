@@ -2,12 +2,13 @@
 using System.Net;
 using System.Web.Http;
 using System.Web.Http.Description;
+using System.Web.Http.OData;
 using CustomerManager.Models;
 
 namespace CustomerManager.Controllers
 {
-    //public class CustomersController : ODataController
-    public class CustomersController : ApiController
+    public class CustomersController : ODataController
+    //public class CustomersController : ApiController
     {
         private readonly ICustomerRepository _customerRep;
 
@@ -16,7 +17,7 @@ namespace CustomerManager.Controllers
             _customerRep = customerRep;
         }
 
-        //[EnableQuery]
+        [EnableQuery]
         public IQueryable<Customer> GetCustomers()
         {
             return _customerRep.GetCustomers();

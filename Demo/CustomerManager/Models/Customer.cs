@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System.Collections;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace CustomerManager.Models
@@ -19,6 +20,8 @@ namespace CustomerManager.Models
         public string LastName { get; set; }
 
         [Display(Name = "Mail")]
-        public string Mail { get; set; } 
+        public string Mail { get; set; }
+
+        public ICollection<Invoice> Invoices { get; set; }
     }
 }
