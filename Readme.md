@@ -42,7 +42,7 @@ Folgende Themen haben Sie mit einer hohen Priorität bewertet. In der nachfolgen
 # Agenda
 
 
-[# Tag 1 - ASP.NET MVC / Web API & C# Unit Testing](Tag_1.md)
+## [Tag 1 - ASP.NET MVC / Web API & C# Unit Testing](Tag_1.md)
 
 1. Themenwahl für Prototyp, Anlegen Projekt
 2. Anlegen von DTOs / POCOs (Geschäftsobjekte)
@@ -62,8 +62,7 @@ Eingesetzte Technologien:
 - MSpec & Moq & Fluent Assertions
 
 
-[## Tag 2 - ASP.NET MVC & Kendo UI](Tag_2.md)
-
+## [Tag 2 - ASP.NET MVC & Kendo UI](Tag_2.md)
 1. Besprechung Ergebnisse des Vortags
 2. Grundlagen ASP.NET MVC
     * Routing und Bundling
